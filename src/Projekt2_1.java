@@ -1,7 +1,37 @@
+//M. Stencel 4AZI
+
 public class Projekt2_1 {
     public static void main(String[] args) {
 
-        //do napisania
+        Rational r1 = new Rational(1, 2);
+        Rational r2 = new Rational(2, 3);
+        Rational r3 = new Rational (5,10);
+
+        System.out.println("ułamek r1: " + r1);
+        System.out.println("ułamek r2: " + r2);
+        System.out.println("ułamek r3 (skrócony): " + r3);
+        System.out.println("----");
+
+        System.out.println("Testowanie działań arytmetycznych:");
+        System.out.println("Dodawanie 1/2 + 2/3 = " + r1.add(r2));
+        System.out.println("Odejmowanie 2/3 - 5/10 = " + r2.sub(r3));
+        System.out.println("Mnożenie 2/3 * 5/10 = " + r2.mul(r3));
+        System.out.println("Dzielenie 1/2 / 2/3 = " + r1.div(r2));
+        System.out.println("----");
+
+        System.out.println("Testowanie porównania:");
+        System.out.println("Porównanie 1/2 do 2/3: " + r1.compareTo(r2));
+        System.out.println("Porównanie 1/3 do 1/2: " + r2.compareTo(r1));
+        System.out.println("Porównanie 5/10 do 1/2: " + r3.compareTo(r1));
+        System.out.println("----");
+
+        System.out.println("Próba utworzenia ułamka z zerem w mianowniku:");
+            try {
+                Rational rErr = new Rational(5, 0);
+            }
+            catch (IllegalArgumentException e) {
+                System.out.println("Złapano błąd: " + e.getMessage());
+            }
 
     }
 }
